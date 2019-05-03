@@ -33,11 +33,13 @@
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last Name*" value=""/>
+                            <div class="jumbotron">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" value=""/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name*" value=""/>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
