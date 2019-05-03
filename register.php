@@ -34,19 +34,23 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Name *" value=""/>
+                                <input type="text" class="form-control" placeholder="First Name" value=""/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Phone Number *" value=""/>
+                                <input type="text" class="form-control" placeholder="Last Name*" value=""/>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Password *" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value=""/>
-                            </div>
+                            <table class="table table-hover">
+                                <thead> 
+                                    <tr> 
+                                        <th>#</th> 
+                                        <th>First Name</th> 
+                                        <th>Last Name</th> 
+                                        <th>Date Add</th> 
+                                    </tr> 
+                                </thead> 
+                            </table>
                         </div>
                     </div>
                     <button type="button" class="btnSubmit">Submit</button>
