@@ -20,9 +20,41 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->helper('url');
+		$this->load->view('welcome_message');
+	}
+
+	public function get_data() {
+
 		$this->load->database();
-		$query = $this->db->get("register")->result();
-		print_r($query);
-		// $this->load->view('welcome_message');
+		$query = $this->db->select("*")
+					->from("register")
+					->order_by("id", "DESC")
+					->get()
+					->result();
+		$this->db->close();
+		
+		$data["status"] = 1;
+		$data["msg"] = "success";
+		$data["result"] = $query;
+		
+		echo json_encode($data);
+	}
+
+	public function add_data() {
+		$params = $this->input->post();
+
+		$dataInsert = array(
+			'first_name' => $params["first_name"],
+			'last_name' => $params["last_name"]
+		);
+
+		$this->load->database();
+		if ($this->db->insert("register", $dataInsert)) {
+			$data["status"] = 1;
+			$data["msg"] = "success";
+			echo json_encode($data);
+		}
+		$this->db->close();
 	}
 }
