@@ -14,4 +14,9 @@
     $serverName = "tcp:radhsyn.database.windows.net,1433";
     $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+    $stmt = $conn->query("SELECT * FROM register");
+    while ($row = $stmt->fetch()) {
+        echo $row['first_name']."<br />\n";
+    }
+
 ?>
