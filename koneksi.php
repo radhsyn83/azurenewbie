@@ -1,20 +1,17 @@
 <?php
-    $servername = "radhsyn.database.windows.net";
-    $username = "radhsyn83";
-    $password = "Sense324";
-    $db = "radhsyn83-db";
+    // PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:radhsyn.database.windows.net,1433; Database = radhsyn83-db", "radhsyn83", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
 
-    $link = mysqli_connect($servername, $username, $password, $db);
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "radhsyn83@radhsyn", "pwd" => "{your_password_here}", "Database" => "radhsyn83-db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:radhsyn.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
-    if (!$link) {
-        echo "Error: Unable to connect to MySQL." . PHP_EOL;
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-        exit;
-    }
-
-    echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-    echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
-
-    mysqli_close($link);
 ?>
