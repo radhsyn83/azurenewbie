@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'azure',
-	'dbdriver' => 'mysqli',
+	'hostname' => 'radhsyn.database.windows.net',
+	'username' => 'radhsyn83',
+	'password' => 'Sense324',
+	'database' => 'radhsyn83-db',
+	'dbdriver' => 'sqlsrv',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
