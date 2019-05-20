@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+        $this->load->library('azure');
 		$this->load->helper('url');
 		$this->load->view('welcome_message');
 	}
