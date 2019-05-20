@@ -521,3 +521,20 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['azure_storage_account_name'] = 'radhsyn83'; // Your Storage account name
+$config['azure_storage_account_key']  = 'pK6o1K7te4zu7CqHo+2Zh48nzkoajMkLlIsCphoFBgGhWo6TBufXHeu/wE3gSW2COzfQut0LmmqjcD5T+VlqSg=='; // Your account key
+
+// Usually the ones below can stay the same unless you are gonna use storage emulator
+$config['azure_table_host'] = 'table.core.windows.net';
+$config['azure_blob_host'] = 'blob.core.windows.net';
+$config['azure_queue_host'] = 'queue.core.windows.net';
+
+$config['azure_storage_useproxy'] = false;
+$config['azure_storage_proxy'] =    '';
+$config['azure_storage_proxy_port'] = '8080';
+
+// The primary and backup caching adapters to use for caching azure queries
+$config['azure_caching_adapter'] = 'apc';
+$config['azure_caching_backup']  = 'file';
+$config['azure_caching_interval']  = 3600;   // 1 hour
